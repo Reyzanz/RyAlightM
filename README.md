@@ -1,32 +1,40 @@
 # RyAlightM
 
-Project Android starter untuk aplikasi yang berisi dua fitur utama:
+Aplikasi Android starter untuk fitur:
 - Auto Gambar Vector
 - Lyrics Teks Otomatis
 
-## Struktur
-- `app/` = project Android
-- `app/src/main/java/com/reyzanz/ryalightm/` = kode utama
-- `app/src/main/res/` = resource Android
+## Status saat ini
+Versi yang sudah dibuat saat ini adalah MVP cepat dengan:
+- 2 tab utama
+- formulir pemilihan gambar/audio
+- pilihan bahasa
+- mode lirik Perkata / Perkalimat
+- generator XML mock untuk Alight Motion
+- tombol Download
 
-## Fitur MVP yang sudah dibuat
-- UI tab untuk Auto Gambar Vector
-- UI tab untuk Lyrics Teks Otomatis
-- Pilihan bahasa dan mode lyric
-- Generasi XML mock untuk Alight Motion
-- Download button UI
+## Fitur yang direncanakan lanjutan
+1. Pendeteksi objek otomatis pada foto
+2. Segmentasi objek per layer (background, meja, kursi, air, matahari, dll)
+3. Transkripsi audio ke teks dengan timing per kata / per kalimat
+4. Deteksi bahasa otomatis dan mapping ke model bahasa yang lebih akurat
+5. Export XML yang lebih rapi dan dapat didownload sebagai file
+6. Build APK final untuk Android
 
-## Cara buka di Android Studio
-1. Buka Android Studio
-2. Pilih `Open` lalu pilih folder `RyAlightM`
-3. Tunggu Gradle sync selesai
-4. Jalankan aplikasi di emulator atau HP Android
+## Struktur proyek
+- `app/` = module Android utama
+- `app/src/main/java/` = kode Compose + data model + export logic
+- `app/src/main/res/` = tampilan dan ikon aplikasi
 
-## Catatan
-Ini adalah versi starter / MVP cepat. Fitur AI object segmentation dan timing lyric yang presisi tinggi butuh integrasi model tambahan, seperti:
-- OpenCV / MediaPipe / segmentasi objek
-- Whisper / Vosk untuk transkripsi audio
-- alignment timing yang lebih akurat untuk per kata maupun per kalimat
+## Cara menjalankan
+1. Buka folder `RyAlightM` di Android Studio.
+2. Tunggu Gradle sync selesai.
+3. Jalankan aplikasi di emulator atau perangkat Android.
 
-## Nama aplikasi
-`RyAlightM`
+## Catatan penting
+Versi ini masih berupa starter project yang siap dikembangkan lebih lanjut. Untuk hasil yang benar-benar presisi seperti yang Anda inginkan, perlu integrasi ke model AI seperti:
+- segmentasi objek vision
+- speech-to-text dengan timestamp akurat
+- alignment timing lirik
+- export XML yang cocok dengan struktur Alight Motion
+

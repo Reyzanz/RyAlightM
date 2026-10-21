@@ -2,7 +2,6 @@ package com.reyzanz.ryalightm.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -29,7 +28,7 @@ import com.reyzanz.ryalightm.util.XmlExporter
 
 @Composable
 fun LyricsScreen() {
-    var selectedAudio by remember { mutableStateOf("lagu_sample.mp3") }
+    var selectedAudio by remember { mutableStateOf("lagu_demo.mp3") }
     var selectedMode by remember { mutableStateOf(LyricsMode.PER_WORD) }
     var selectedLanguage by remember { mutableStateOf(LanguageOption.AUTO_DETECT) }
     var generatedXml by remember { mutableStateOf("") }
@@ -45,7 +44,7 @@ fun LyricsScreen() {
         Card(modifier = Modifier.fillMaxWidth()) {
             Column(modifier = Modifier.padding(16.dp)) {
                 Text("Lyrics Teks Otomatis", style = MaterialTheme.typography.titleLarge)
-                Text("Pilih audio, mode, bahasa, lalu generate XML lyric.")
+                Text("Input audio, pilih mode lirik, pilih bahasa, lalu generate XML.")
             }
         }
 
@@ -56,8 +55,8 @@ fun LyricsScreen() {
             Text("Pilih Lagu / Sound")
         }
 
-        Text("Mode", fontWeight = FontWeight.Bold)
-        LyricsMode.values().forEach { mode ->
+        Text("Mode Lirik", fontWeight = FontWeight.Bold)
+        LyricsMode.entries.forEach { mode ->
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.fillMaxWidth()
@@ -71,7 +70,7 @@ fun LyricsScreen() {
         }
 
         Text("Tentukan Bahasa", fontWeight = FontWeight.Bold)
-        LanguageOption.values().forEach { language ->
+        LanguageOption.entries.forEach { language ->
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.fillMaxWidth()
@@ -107,9 +106,7 @@ fun LyricsScreen() {
             }
 
             Button(
-                onClick = {
-                    downloadText = "Downloaded"
-                },
+                onClick = { downloadText = "Downloaded" },
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(downloadText)
